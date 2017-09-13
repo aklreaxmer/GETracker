@@ -15,11 +15,14 @@
 <body>
 	<button onClick="openOasis()">OASIS</button>
   <script>
+
   function openOasis() {
-  window.open("https://students.ucdavis.edu/student/courses.aspx");
-  window.addEventListener('message', function(e) {
-  var message = e.data;
-  window.alert(1);
+  	window.open("https://students.ucdavis.edu/student/courses.aspx");
+  }
+  window.onload = function() {
+  	  window.addEventListener('message', function(e) {
+  	  var message = e.data;
+	  window.alert(1);
 });
 </script>
 
