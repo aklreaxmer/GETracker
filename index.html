@@ -14,6 +14,9 @@
 
 <body>
   <script src="js/scripts.js">
+  var oasis = window.open("https://students.ucdavis.edu/students/sources.aspx");
+  oasis.postMessage(window.self, "https://students.ucdavis.edu");
+  
   window.addEventListener('message', function(e) {
   var message = e.data;
   window.alert(1);
