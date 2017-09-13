@@ -13,7 +13,11 @@
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
-  Hello
+  <script src="js/scripts.js">
+  window.addEventListener('message', function(e) {
+  var message = e.data;
+  window.alert(1);
+});</script>
+
 </body>
 </html>
