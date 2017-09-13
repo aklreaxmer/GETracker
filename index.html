@@ -10,6 +10,8 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+
+
 </head>
 
 <body>
@@ -19,12 +21,43 @@
   function openOasis() {
   	window.open("https://students.ucdavis.edu/student/courses.aspx");
   }
+  
+  function processCourses(courses) {
+ 		makeTable();
+  }
+
   window.onload = function() {
   	  window.addEventListener('message', function(e) {
-  	  var message = e.data;
-	  window.alert(1);
+  	  var courses = e.data;
+  	  processCourses(courses);
+	  window.alert("Courses imported.");
 	});
+  }
+
+  function makeTable(){
+    var body = document.body,
+        tbl  = document.createElement('table');
+    tbl.style.width  = '100px';
+    tbl.style.border = '1px solid black';
+
+    for(var i = 0; i < 3; i++){
+        var tr = tbl.insertRow();
+        for(var j = 0; j < 2; j++){
+            if(i == 2 && j == 1){
+                break;
+            } else {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode('Cell'));
+                td.style.border = '1px solid black';
+                if(i == 1 && j == 1){
+                    td.setAttribute('rowSpan', '2');
+                }
+            }
+        }
+    }
+    body.appendChild(tbl);
 }
+
 </script>
 
 </body>
