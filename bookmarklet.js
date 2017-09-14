@@ -9,8 +9,9 @@ function parse() {
 		courseArray[i] = new Course(
 			
 				courses[i].parentElement.parentElement.getElementsByClassName("CourseName")[0].innerText,
-			
-				courses[i].innerText.includes('AH'),
+				parseInt(
+					courses[i].parentElement.parentElement.getElementsByClassName("column-units")[0].innerText
+				),
 				courses[i].innerText.includes('SE'),
 				courses[i].innerText.includes('SS'),
 				courses[i].innerText.includes('WE'),
@@ -31,8 +32,9 @@ function send(data) {
 	window.opener.postMessage(data, "https://aklreaxmer.github.io");
 }
 
-function Course(_name, _AH, _SE, _SS, _WE, _VL, _ACGH, _DD, _WC, _QL, _SL) {
+function Course(_name, _units, _AH, _SE, _SS, _WE, _VL, _ACGH, _DD, _WC, _QL, _SL) {
 	this.name = _name;
+	this.units = _units;
 	this.AH = _AH;
 	this.SE = _SE;
 	this.SS = _SS;
