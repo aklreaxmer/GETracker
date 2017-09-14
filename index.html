@@ -23,7 +23,7 @@
   }
   
   function processCourses(courses) {
- 		makeTable("ECS30", 5);
+ 		makeTable("AH", 5, courses);
   }
 
   window.onload = function() {
@@ -34,7 +34,7 @@
 	});
   }
 
-  function makeTable(title, numCourses){
+  function makeTable(title, numCourses, courses){
     var body = document.body,
     tbl  = document.createElement('table');
     tbl.style.width  = '10%';
@@ -46,13 +46,21 @@
     unitsCell.appendChild(document.createTextNode("Units"));
     titleCell.style.fontSize = '1.5em';
     titleCell.style.fontWeight = 'bold';
+    unitsCell.style.fontSize = '1.5em';
+    unitsCell.style.fontWeight = 'bold';
     for(var i = 0; i < numCourses; i++){
       
-        var tr = tbl.insertRow();
-        var td = tr.insertCell();
-        td.appendChild(document.createTextNode('Cell'));
-        td.style.border = '1px solid black';
-    
+        var trName = tbl.insertRow();
+        var tdName = trName.insertCell();
+        tdName.appendChild(document.createTextNode(courses[i].units));
+        tdName.style.border = '1px solid black';
+   
+
+        var trUnits = tbl.insertRow();
+        var tdUnits = trUnits.insertCell();
+        tdUnits.appendChild(document.createTextNode(courses[i].name));
+        tdUnits.style.border = '1px solid black'; 
+
     }
     body.appendChild(tbl);
 }
