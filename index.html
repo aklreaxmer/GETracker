@@ -17,7 +17,7 @@
 <body>
   <div>
     Welcome to UCD GE Tracker. Follow the instructions below.<br>
-    1. Select the text below and drag it into your bookmarks bar.<br>
+    1. Select all of the text in the grey box below and drag it into your bookmarks bar.<br>
     <div style="width: 30%; background-color: lightgrey; word-wrap: break-word"> 
     <small>
     javascript:(function()%7Bparse()%3Bfunction%20parse()%20%7Bvar%20courses%20%3D%20document.getElementsByClassName(%22GE3%22)%3Bvar%20courseArray%20%3D%20new%20Array(courses.length)%3Bfor(var%20i%20%20%3D%200%3B%20i%20%3C%20courseArray.length%3B%20i%2B%2B)%20%7BcourseArray%5Bi%5D%20%3D%20new%20Course(courses%5Bi%5D.parentElement.parentElement.getElementsByClassName(%22CourseName%22)%5B0%5D.innerText%2CparseInt(courses%5Bi%5D.parentElement.parentElement.getElementsByClassName(%22column-units%22)%5B0%5D.innerText)%2Ccourses%5Bi%5D.innerText.includes('SE')%2Ccourses%5Bi%5D.innerText.includes('SS')%2Ccourses%5Bi%5D.innerText.includes('WE')%2Ccourses%5Bi%5D.innerText.includes('VL')%2Ccourses%5Bi%5D.innerText.includes('ACGH')%2Ccourses%5Bi%5D.innerText.includes('DD')%2Ccourses%5Bi%5D.innerText.includes('WC')%2Ccourses%5Bi%5D.innerText.includes('QL')%2Ccourses%5Bi%5D.innerText.includes('SL'))%3B%7Dsend(courseArray)%3B%7Dfunction%20send(data)%20%7Bwindow.opener.postMessage(data%2C%20%22https%3A%2F%2Faklreaxmer.github.io%22)%3B%7Dfunction%20Course(_name%2C%20_units%2C%20_AH%2C%20_SE%2C%20_SS%2C%20_WE%2C%20_VL%2C%20_ACGH%2C%20_DD%2C%20_WC%2C%20_QL%2C%20_SL)%20%7Bthis.name%20%3D%20_name%3Bthis.units%20%3D%20_units%3Bthis.AH%20%3D%20_AH%3Bthis.SE%20%3D%20_SE%3Bthis.SS%20%3D%20_SS%3Bthis.WE%20%3D%20_WE%3Bthis.VL%20%3D%20_VL%3Bthis.ACGH%20%3D%20_ACGH%3Bthis.DD%20%3D%20_DD%3Bthis.WC%20%3D%20_WC%3Bthis.QL%20%3D%20_QL%3Bthis.SL%20%3D%20_SL%3B%7D%7D)()
@@ -34,6 +34,11 @@
   }
   
   function processCourses(courses) {
+    coursesAH, coursesSE, coursesSS, coursesWE, coursesOLWE, coursesVL, coursesACGH, coursesDD, coursesWC, coursesQL, coursesSL = [];
+    
+    for(var i = 0; i < courses.length; i++) {
+      if(courses[i].)
+    }
  		makeTable("AH", 5, courses);
   }
 
