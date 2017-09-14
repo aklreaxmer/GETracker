@@ -37,8 +37,8 @@
   function makeTable(title, numCourses, courses){
     var body = document.body,
     tbl  = document.createElement('table');
-    tbl.style.display  = 'inline-block';
     tbl.style.border = '1px solid black';
+    tbl.style.tableLayout = 'auto';
     var tr = tbl.insertRow();
     var titleCell = tr.insertCell();
     titleCell.appendChild(document.createTextNode(title));
